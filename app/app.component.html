@@ -1,0 +1,35 @@
+<div class="container">
+    <br>
+  <div class="row">
+    <button class="btn btn-primary" (click)="oddFlag=!oddFlag">Odd Number</button>
+  </div>
+  <br>  
+    <div class="row">
+    <div *ngIf="!oddFlag">
+        <ul class="list-group">
+      <li class="list-group-item" 
+      *ngFor = "let oddnumber of oddNumbers"
+      [ngClass] = "{odd : oddnumber % 2 !== 0}"
+      [ngStyle] = "{backgroundColor : oddnumber % 2 !== 0 ? 'yellow' : 'transparent' }"
+      >
+          Odd Number : {{oddnumber}}
+      </li>
+      </ul>
+    </div>
+    <div *ngIf="oddFlag">
+      <ul class="list-group">
+      <li class="list-group-item" 
+      *ngFor = "let evennumber of evneNumbers"
+      [ngClass] = "{odd : evennumber % 2 !== 0}"
+      [ngStyle] = "{backgroundColor : evennumber % 2 !== 0 ? 'yellow' : 'transparent' }"
+      >
+        Even Number :  {{evennumber}}
+      </li>
+      </ul>
+      
+   </div>     
+  </div>
+  
+   <p appBasicHighlight>Hover effect with Renderer and HostListener </p> 
+</div>
+
